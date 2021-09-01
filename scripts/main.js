@@ -12,7 +12,8 @@ for (let row = 0; row < num; row++) {
     let div = document.createElement('div')
     div.classList.add('grid-cell')
     div.style.width = `calc(100% / ${num})`
-    console.log(`GRID CELL : ${row} ${col}`)
+    div.setAttribute('data-cell', `${row}x${col}`)
+    // console.log(`GRID CELL : ${row} ${col}`)
     rowContainer.appendChild(div)
   }
 
