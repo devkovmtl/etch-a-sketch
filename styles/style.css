@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 * {
   box-sizing: border-box;
@@ -10,8 +10,9 @@ body {
 }
 
 h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
+  font-size: 4rem;
 }
 
 .wrapper {
@@ -28,6 +29,11 @@ h1 {
 
 .page-title {
   grid-area: page-title;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 .grid-options {
   grid-area: options;
