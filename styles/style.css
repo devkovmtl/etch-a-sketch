@@ -54,7 +54,6 @@ p {
 }
 
 .options {
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -123,6 +122,27 @@ p {
   color: #fff;
 }
 
+.grid-container {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.grid-container__row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-container__cell {
+  height: 100%;
+  border: 1px solid black;
+}
+
+.background-cell {
+}
+
 @media screen and (max-width: 414px) {
   .btn {
     width: 24px;
@@ -155,5 +175,10 @@ p {
   .options {
     width: 90%;
     margin: 12px auto;
+  }
+
+  .grid-container {
+    width: 300px;
+    height: 300px;
   }
 }

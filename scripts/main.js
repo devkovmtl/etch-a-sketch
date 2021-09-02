@@ -2,34 +2,35 @@ let gridSize = 50
 // INPUT RANGE SLIDER THE SLIDER AND VALUE
 const rangeGridSize = document.querySelector('#range-grid-size')
 const rangeGridValue = document.querySelector('.range-slider__value')
+// GRab the grid container
+let gridContainer = document.querySelector('.grid-container')
 
 rangeGridSize.onchange = function (e) {
   gridSize = parseInt(e.target.value)
   rangeGridValue.textContent = gridSize
 }
 
-// let gridContainer = document.querySelector('#grid-container')
+function createGrid(cellNbr) {
+  for (let row = 0; row < cellNbr; row++) {
+    let rowContainer = document.createElement('div')
+    rowContainer.setAttribute('class', 'grid-container__row')
+    rowContainer.style.height = `calc(10% * ${cellNbr})`
 
-// let num = 100
+    for (let col = 0; col < cellNbr; col++) {
+      // console.log(gridContainer)
+      let div = document.createElement('div')
+      div.classList.add('grid-container__cell')
+      div.style.width = `calc(100% / ${cellNbr})`
+      div.setAttribute('data-cell', `${row}x${col}`)
+      // console.log(`GRID CELL : ${row} ${col}`)
+      rowContainer.appendChild(div)
+    }
 
-// function createGrid(num) {
-//   for (let row = 0; row < num; row++) {
-//     let rowContainer = document.createElement('div')
-//     rowContainer.setAttribute('class', 'grid-row')
-//     rowContainer.style.height = `calc(10% * ${num})`
+    gridContainer.appendChild(rowContainer)
+  }
+}
 
-//     for (let col = 0; col < num; col++) {
-//       // console.log(gridContainer)
-//       let div = document.createElement('div')
-//       div.classList.add('grid-cell')
-//       div.style.width = `calc(100% / ${num})`
-//       div.setAttribute('data-cell', `${row}x${col}`)
-//       // console.log(`GRID CELL : ${row} ${col}`)
-//       rowContainer.appendChild(div)
-//     }
-
-//     gridContainer.appendChild(rowContainer)
-//   }
+createGrid(gridSize)
 
 //   const gridCells = document.querySelectorAll('div.grid-cell')
 //   gridCells.forEach((gridCell) => {
@@ -56,5 +57,3 @@ rangeGridSize.onchange = function (e) {
 //   }
 //   createGrid(cellNbr)
 // }
-
-// createGrid(48)
