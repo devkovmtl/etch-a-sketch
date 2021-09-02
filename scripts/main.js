@@ -86,4 +86,29 @@ function createGrid(cellNbr) {
   })
 }
 
+// COLOR PICKER
+// Grab
+const colorPicker = document.querySelector('input.btn-multi')
+
+// Generate a random color for initial value
+const randomHEXColor = RGBToHex(
+  generateNumber(),
+  generateNumber(),
+  generateNumber()
+)
+// Set the color to value
+colorPicker.setAttribute('value', `${randomHEXColor}`)
+// listen for change and apply the color
+colorPicker.onchange = function (e) {
+  // grab every thing after #
+  let hexColor = e.target.value.slice(1)
+  // hexColor to array of 2 element
+  var aRgbHex = hexColor.match(/.{1,2}/g)
+  // every element is color
+  cellColorR = parseInt(aRgbHex[0], 16)
+  cellColorG = parseInt(aRgbHex[1], 16)
+  cellColorB = parseInt(aRgbHex[2], 16)
+}
+
+// CREATE THE INITAL GRID
 createGrid(gridSize)
