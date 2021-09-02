@@ -141,8 +141,8 @@ p {
   height: 100%;
   border: 1px solid black;
 }
-
-.background-cell {
+.grid-container__cell:hover {
+  cursor: cell;
 }
 
 @media screen and (max-width: 414px) {
