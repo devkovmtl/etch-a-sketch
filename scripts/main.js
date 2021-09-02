@@ -8,9 +8,13 @@ let gridContainer = document.querySelector('.grid-container')
 rangeGridSize.onchange = function (e) {
   gridSize = parseInt(e.target.value)
   rangeGridValue.textContent = gridSize
+  createGrid(gridSize)
 }
 
 function createGrid(cellNbr) {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild)
+  }
   for (let row = 0; row < cellNbr; row++) {
     let rowContainer = document.createElement('div')
     rowContainer.setAttribute('class', 'grid-container__row')
