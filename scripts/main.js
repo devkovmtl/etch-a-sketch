@@ -45,7 +45,9 @@ function onMouseOverCell(e) {
   const cell = document.querySelector(
     `div.grid-container__cell[data-cell="${dataGridLocation}"]`
   )
-  cell.style.backgroundColor = `rgba(${cellColorR}, ${cellColorG}, ${cellColorB}, ${cellColorOpacity})`
+  if (e.which === 1) {
+    cell.style.backgroundColor = `rgba(${cellColorR}, ${cellColorG}, ${cellColorB}, ${cellColorOpacity})`
+  }
 }
 
 // clear the grid
