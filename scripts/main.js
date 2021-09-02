@@ -14,11 +14,30 @@ let gridContainer = document.querySelector('.grid-container')
 const clearBtn = document.querySelector('button.btn-reset')
 clearBtn.addEventListener('click', (e) => createGrid(gridSize))
 
+// grab white button
+const btnWhite = document.querySelector('.btn-white')
+btnWhite.addEventListener('click', changeColor)
+
+const btnBlack = document.querySelector('button.btn-black')
+btnBlack.addEventListener('click', changeColor)
+
 // change the size of grid
 rangeGridSize.onchange = function (e) {
   gridSize = parseInt(e.target.value)
   rangeGridValue.textContent = gridSize
   createGrid(gridSize)
+}
+
+function changeColor(e) {
+  if (e.target.classList.contains('btn-white')) {
+    cellColorR = 255
+    cellColorG = 255
+    cellColorB = 255
+  } else if (e.target.classList.contains('btn-black')) {
+    cellColorR = 0
+    cellColorG = 0
+    cellColorB = 0
+  }
 }
 
 function onMouseOverCell(e) {
