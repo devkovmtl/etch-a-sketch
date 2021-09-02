@@ -1,3 +1,13 @@
+let gridSize = 50
+// INPUT RANGE SLIDER THE SLIDER AND VALUE
+const rangeGridSize = document.querySelector('#range-grid-size')
+const rangeGridValue = document.querySelector('.range-slider__value')
+
+rangeGridSize.onchange = function (e) {
+  gridSize = parseInt(e.target.value)
+  rangeGridValue.textContent = gridSize
+}
+
 // let gridContainer = document.querySelector('#grid-container')
 
 // let num = 100
