@@ -43,7 +43,12 @@ p {
   font-size: 1.8em;
 }
 
-p.subtitle {
+.title,
+.subtitle {
+  color: white;
+}
+
+.subtitle {
   font-family: 'Permanent Marker', cursive;
   margin-top: 12px;
 }
