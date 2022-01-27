@@ -5,7 +5,7 @@ from the Odin Project\'s [curriculum]
 
 Browser version of something between a sketchpad and an Etch-A-Sketch
 
-## Build
+## Build with
 
 - HTML
 - CSS
